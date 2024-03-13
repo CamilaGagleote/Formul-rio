@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+        <title>Cadastro</title>
+    </head>
+
+    <body>  
+
+        <div>
+            <h1 id="titulo">Cadastro de clientes</h1>
+            <p id="subtitulo">Complete suas informações</p>
+            <br>
+        </div>
+
+        <form action="https://api.sheetmonkey.io/form/xrYfBeYFgu5WgqwjPniL9N" method="post">
+
+            <fieldset class="grupo">
+                
+                <div class="campo">
+                    <label for="nome"><strong>Nome</strong></label>
+                    <input type="text" name="nome" placeholder="Digite seu nome" id="nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="sobrenome"><strong>Sobrenome</strong></label>
+                    <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" id="sobrenome" required>
+                </div>
+            </fieldset> 
+
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone"><strong>Telefone</strong></label>
+                    <input type="tel" name="telefone" placeholder="Digite seu telefone" id="telefone">
+                </div>
+            </fieldset>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="cidade"><strong>Cidade</strong></label>
+                    <input type="text" name="cidade" placeholder="Digite a sua cidade" id="cidade" >
+                </div>
+                <div class="campo">
+                    <label for="telefone"><strong>Volume</strong></label>
+                    <div id="volume">
+                        <button class="sub">-</button>
+                        <input type="number" value="0" placeholder="Digite o Volume" name="volume" id="volume" readonly required>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="op">
+                <br><br>
+                <label><strong>Sabe qual produto utilizar</strong></label>
+                <label>
+                    <br><br>
+                    <input type="radio" name="opção" value="Sim" >Sim, sei qual produto utilizar
+                </label>
+                <label>
+                    
+                    <input type="radio" name="opção" value="Não">Não, preciso de ajuda para escolher o meu produto
+                </label>
+            </div>
+
+            <fieldset class="grupo">
+                <div id="check" style="display: none;">
+                    <br>
+                    <label><strong>Selecione o seu produto</strong></label><br><br>
+                    <input type="checkbox" id="produto1" name="produto1" value="Texapon S 2">
+                    <label for="produto1"> Texapon S 2</label>
+                    <br>
+                    <input type="checkbox" id="produto2" name="produto2" value="Emulgin CO 40">
+                    <label for="produto2"> Emulgin CO 40</label><br>
+                    <input type="checkbox" id="produto3" name="produto3" value="Plantacare 2000 UP">
+                    <label for="produto 3"> PlantaCare 2000 UP</label><br>
+                    <input type="checkbox" id="produto4" name="produto4" value="Plantacare 1200 UP">
+                    <label for="produto4"> Plantacare 1200 UP</label><br>
+                    <input type="checkbox" id="produto5" name="produto5" value="Texapon SBN">
+                    <label for="produto5"> Texapon SBN</label><br>
+                    <input type="checkbox" id="produto6" name="produto6" value="Myritol 312 LB">
+                    <label for="produto6"> Myritol 312 LB</label><br>
+                    <input type="checkbox" id="produto7" name="produto7" value="UVINUL MC 80">
+                    <label for="produto7"> UNIVUL MC 80</label><br>
+                    <input type="checkbox" id="produto8" name="produto8" value="Plantaren 1200 N">
+                    <label for="produto8"> Plantaren 1200 N</label><br>
+                    <input type="checkbox" id="produto9" name="produto9" value="Jordapon SCI Powder">
+                    <label for="produto9"> Jordapon SCI Powder</label><br>
+                    <input type="checkbox" id="produto10" name="produto10" value="Lamesoft PO 65">
+                    <label for="produto10"> Lamesoft PO 65</label><br>
+                    <input type="checkbox" id="produto11" name="produto11" value="Univul A Plus Granular">
+                    <label for="produto11"> Univul A Plus Granular</label><br>
+                    <input type="checkbox" id="produto12" name="produto12" value="Cetiol AB">
+                    <label for="produto12"> Cetiol AB</label><br>
+                    <input type="checkbox" id="produto13" name="produto13" value="Myritol 312">
+                    <label for="produto13"> Myritol 312 </label><br>
+                    <input type="checkbox" id="produto14" name="produto14" value="Cetiol CC">
+                    <label for="produto14"> Cetiol CC</label><br>
+                    <input type="checkbox" id="produto15" name="produto15" value="Tinosorb M">
+                    <label for="produto15"> Tinosorb M</label><br>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div id="check1" style="display: none;">
+                    <br>
+                    <label> Descreva para qual finalidade está precisando </label><br>
+                    <textarea id="observação" name="observação" style="width: 300px;"> </textarea>
+                </div>
+            </fieldset>
+            <div class="campo">
+                <br> 
+                <label>
+                    <input type="checkbox" name="aceito" id="aceito" required>Estou de acordo com a política de privacidade.
+                </label>
+            </div>
+            <button class="botao" type="submit" onsubmit="">Submeter</button>           
+
+        </form>
+        <script>
+            var rads=document.getElementsByName("opção")
+            const element = document.getElementById('check');
+            const element1 =document.getElementById('check1');
+            rads[0].addEventListener('change',function(){
+                element.style.display = 'block';
+                element1.style.display = 'none';
+            })
+            rads[1].addEventListener('change',function(){
+                 element.style.display = 'none';
+                 element1.style.display ='block'
+              
+            })
+        </script>
+        <script src="./formulario.js"></script>
+    </body>
+</html>
